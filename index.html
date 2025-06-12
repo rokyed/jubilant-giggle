@@ -37,6 +37,7 @@
             pointer-events: none;
             animation-name: fall;
             animation-timing-function: linear;
+            animation-iteration-count: infinite;
         }
         @keyframes fall {
             to {
@@ -55,11 +56,12 @@
     <script>
         const count = 200;
         for (let i = 0; i < count; i++) {
-            const snow = document.createElement('div');
-            snow.className = 'snowflake';
-            snow.style.left = Math.random() * 100 + 'vw';
-            snow.style.animationDuration = 5 + Math.random() * 10 + 's';
-            snow.style.animationDelay = Math.random() * -20 + 's';
+            const snow = document.createElement("div");
+            snow.className = "snowflake";
+            snow.style.left = Math.random() * 100 + "vw";
+            snow.style.animationDuration = 5 + Math.random() * 10 + "s";
+            snow.style.animationDelay = Math.random() * -20 + "s";
+            snow.style.backgroundColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
             document.body.appendChild(snow);
         }
     </script>
